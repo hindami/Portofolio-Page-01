@@ -1,0 +1,244 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container-page{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "navigasi"
+                         "salam-pembuka"
+                         "proyek"
+                         "kontak"
+                         "kaki";
+}
+
+/* Navigasi */
+
+#navbar {
+    top:0;
+    position: sticky;
+    width: 100%;
+    background-color: steelblue;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 3rem 0 3rem;
+    grid-area: navigasi;
+}
+
+#navbar a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+}
+
+/* Welcome Section */
+
+#welcome-section {
+    grid-area: salam-pembuka;
+    background-color: #2b2a2a;
+    width:100%;
+    padding: 12vh 5vw 20vh 5vw;
+}
+
+#welcome-section h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+#welcome-section h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 200;
+    text-align: center;
+    color: steelblue;
+    margin-top: 0;
+    position: relative;
+    top: -3vh;
+    padding: 0 10vw;
+}
+
+/* Projects */
+
+#projects {
+    width: 100%;
+    grid-area: proyek;
+    background-color: #3a42af;
+    padding: 0 0vw 4vh 0vw;
+}
+
+#projects h2 {
+    color: #f4f4f4;
+    font-size: 4rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+.line {
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    width: 60%;
+    height: 2px;
+
+}
+
+.tile {
+    margin:0 auto;
+    padding: 10vh 3vw 2vh 0;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.project-tile {
+    text-decoration: none;
+    display: grid;
+    width: 100%;
+    height:400px;
+    margin: 1vh 1vw;
+    padding: 0 2vw;
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: "image"
+                         "text";
+}
+
+.project-tile img{
+    height:300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-tile p{
+    margin: -1vh 0 0 0;
+    line-height: 100px;
+    text-align: center;
+    color:#f4f4f4;
+    font-family:'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    background: #2b2a2a;
+    height:100px;
+    text-decoration: none;
+}
+
+.project-tile p code span{
+    color: #2b2a2a;
+    font-size: var(1.4rem);
+}
+
+.project-tile p:hover > code span {
+    color: orangered;
+}
+
+
+/* Contact */
+#contact {
+    margin: 0 auto;
+    grid-area: kontak;
+    width: 100%;
+    background-color: #525151;
+    color: #f4f4f4;
+    padding: 2vh 2vw;
+    border-bottom: 2px solid steelblue;
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+}
+
+#contact h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+#contact h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #f4f4f4;
+    text-align: center;
+    font-style: italic;
+    margin-top: 0;
+    position: relative;
+    top: -7vh;
+}
+
+.icon{
+    padding-bottom: 8vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.icon button {
+    padding: 0.7rem;
+    font-size: 1.6rem;
+    border:none;
+    background: none;
+    color:#f4f4f4;
+    text-shadow: 2px 2px 2px rgb(31, 31, 31);
+}
+
+
+/* Footer */
+footer {
+    grid-area: kaki;
+    padding: 8vh 2vw;
+    color: #f4f4f4;
+    background-color: #525151;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer h3 {
+    font-weight: 300;
+    text-align: right;
+}
+
+@media screen and (max-width: 505px) {
+    
+    footer h3{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 506px) {
+
+    #navbar {
+        justify-content: flex-end;
+    }
+
+    
+
+}
+
+@media screen and (min-width: 806px) {
+
+    .tile {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+        grid-gap: 4rem;
+        width: 100%;
+        justify-items: stretch;
+        align-items: stretch;
+        
+    }
+
+}
